@@ -2,6 +2,7 @@
 
 @section('content')
 @include('tasks.model')
+@include('tasks.importModal')
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <!-- Navbar links -->
@@ -9,6 +10,8 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <!-- Button to trigger modal -->
+                    {{-- <input type='file' class="btn btn-primary"> --}}
+                    <button type='button' class="btn btn-primary" name = "task-import" data-toggle="modal" data-target="#task_import">Task import</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTaskModal">Create Task</button>
                 </li>
             </ul>

@@ -11,6 +11,9 @@
 |
 */
 
+use App\Http\Controllers\AdminController;
+use Symfony\Component\Routing\Loader\Configurator\ImportConfigurator;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,6 +30,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('task/{task_id}','AdminController@listUsers')->name('sel');
     Route::patch('task/{task_id}','AdminController@updateTask');
     Route::get('selva','AdminController@taskList');
+    Route::post('importTask', "TaskImport@importTask");
 });
 Route::post('deleteAssign','AdminController@deleteTask');
 Route::post('selva','AdminController@selva');
