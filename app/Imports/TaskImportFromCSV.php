@@ -19,7 +19,7 @@ class TaskImportFromCSV implements ToCollection, WithHeadingRow
             if($row['parent_id'] == "null") {
                 $row['parent_id'] = null;
             }
-            $task = Task::create([
+                $task = Task::create([
                 "parent_id" => null,
                 "task_name" => $row['task_name'],
                 "description" => $row['description'],
