@@ -31,6 +31,7 @@ Route::middleware(['admin'])->group(function () {
     Route::patch('task/{task_id}','AdminController@updateTask');
     Route::get('selva','AdminController@taskList');
     Route::post('importTask', "TaskImport@importTask");
+    Route::get('exportTask', 'TaskImport@exportTask');
 });
 Route::post('deleteAssign','AdminController@deleteTask');
 Route::post('selva','AdminController@selva');
